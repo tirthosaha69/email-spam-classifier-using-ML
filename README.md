@@ -1,4 +1,3 @@
-```markdown
 # 📧 Email Spam Classifier using Machine Learning (FastAPI)
 
 This project is a simple **Email Spam Detection Web App** built using **FastAPI**, powered by a trained **Scikit-learn model** and **TF-IDF vectorizer**. The app predicts whether a given email text is spam or not.
@@ -105,7 +104,5 @@ Feel free to connect with me on [GitHub](https://github.com/tirthosaha69) for co
 ## ⭐ Give it a Star
 
 If you found this useful, please ⭐ the repo to show support!
-
-```
 
 
