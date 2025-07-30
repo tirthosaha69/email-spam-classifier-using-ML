@@ -1,108 +1,106 @@
 # 📧 Email Spam Classifier using Machine Learning (FastAPI)
 
-This project is a simple **Email Spam Detection Web App** built using **FastAPI**, powered by a trained **Scikit-learn model** and **TF-IDF vectorizer**. The app predicts whether a given email text is spam or not.
+This project is a **web-based email spam classifier** built using **FastAPI**. It allows users to enter an email message and get a real-time prediction on whether it is spam or not using a trained machine learning model.
 
 ---
 
 ## 🚀 Features
 
-- Input email content through a web form
-- Get instant predictions (Spam / Not Spam)
-- Trained using TF-IDF vectorizer and Naive Bayes classifier
-- Built with FastAPI and Jinja2 templating
+- Clean and simple UI using Jinja2 templates
+- Spam/Ham prediction using a trained `MultinomialNB` model
+- Fast and asynchronous backend with FastAPI
+- Modular code structure (separate prediction logic)
 
 ---
 
-## 🏗️ Project Structure
+## 🧠 ML Model Info
+
+- Vectorizer: **TfidfVectorizer**
+- Model: **Multinomial Naive Bayes (MultinomialNB)**
+- Trained on a cleaned version of a labeled dataset (mail_data.csv)
+
+---
+
+## 🗂️ Project Structure
 
 ```
 
-├── dataset/
-│   └── mail\_data.csv
-├── Model/
-│   ├── spam\_classifier.pkl
-│   └── tfidf\_vectorizer.pkl
-├── templates/
-│   └── index.html
-├── main.py
+email-spam-classifier-using-ML/
+│
+├── main.py                  # FastAPI app entry point
+├── utils.py                 # ML prediction logic
 ├── requirements.txt
+├── templates/
+│   └── index.html           # Web frontend
+├── Model/
+│   ├── spam\_classifier.pkl  # Trained ML model
+│   └── tfidf\_vectorizer.pkl # TF-IDF vectorizer
+├── dataset/
+│   └── mail\_data.csv        # Raw dataset
 └── README.md
 
 ````
 
 ---
 
-## 🔧 Requirements
-
-Install the required Python packages:
+## 🔧 Installation
 
 ```bash
+git clone https://github.com/tirthosaha69/email-spam-classifier-using-ML.git
+cd email-spam-classifier-using-ML
 pip install -r requirements.txt
 ````
 
 ---
 
-## 🚦 How to Run
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/tirthosaha69/email-spam-classifier-using-ML.git
-cd email-spam-classifier-using-ML
-```
-
-2. **Start the FastAPI server**
+## ▶️ Run the App
 
 ```bash
 uvicorn main:app --reload
 ```
 
-3. Open your browser and visit:
-   [http://127.0.0.1:8000](http://127.0.0.1:8000)
+Then open your browser and go to:
+👉 **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
 
 ---
 
-## 📂 Dataset
+## 🧪 Example
 
-* The dataset `mail_data.csv` is stored in the `dataset/` folder.
-* It is preprocessed and used to train the spam classifier.
+Enter a message like:
+`Congratulations! You've won a free iPhone. Click here to claim.`
+→ Prediction: **Spam Mail 🚫**
 
----
-
-## 🧠 Model Info
-
-* **Model**: Multinomial Naive Bayes
-* **Vectorizer**: TF-IDF
-* Saved in the `Model/` directory:
-
-  * `spam_classifier.pkl`
-  * `tfidf_vectorizer.pkl`
+Or something like:
+`Hey, are we still on for the meeting tomorrow?`
+→ Prediction: **Ham Mail ✅**
 
 ---
 
-## 📸 UI Preview
+## 📦 Requirements
 
-The app provides a simple HTML form to enter email text and check predictions instantly.
+See `requirements.txt`:
 
----
-
-## 🛠 Built With
-
-* [FastAPI](https://fastapi.tiangolo.com/)
-* [Scikit-learn](https://scikit-learn.org/)
-* [Jinja2](https://jinja.palletsprojects.com/)
-* [Pandas](https://pandas.pydata.org/)
-
----
-
-## 📬 Contact
-
-Feel free to connect with me on [GitHub](https://github.com/tirthosaha69) for collaboration or suggestions.
+```txt
+fastapi
+uvicorn
+scikit-learn
+pandas
+joblib
+python-multipart
+jinja2
+```
 
 ---
 
-## ⭐ Give it a Star
+## 🧑‍💻 Author
 
-If you found this useful, please ⭐ the repo to show support!
+**Tirtho Saha**
+📍 [GitHub](https://github.com/tirthosaha69)
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
 
 
